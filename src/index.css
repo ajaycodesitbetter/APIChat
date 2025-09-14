@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-purple: #8b5cf6;
+  --purple-dark: #5b21b6;
+  --purple-light: #f8f6ff;
+  --purple-hover: #7c3aed;
+  --sidebar-width: 260px;
+  --header-height: 60px;
+}
+
+[data-theme="dark"] {
+  --primary-purple: #a855f7;
+  --purple-dark: #7c3aed;
+  --purple-light: #1e1b23;
+  --purple-hover: #9333ea;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .chat-message {
+    @apply p-4 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors;
+  }
+  
+  .chat-input {
+    @apply w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg 
+           bg-white dark:bg-gray-700 focus:ring-2 focus:ring-purple-500 
+           focus:border-transparent resize-none;
+  }
+  
+  .btn-primary {
+    @apply bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg 
+           transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 
+           focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 
+           text-gray-700 dark:text-gray-300 px-4 py-2 rounded-lg transition-colors;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-purple-900/20 
+           text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-300 
+           transition-colors cursor-pointer;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300;
+  }
+}
