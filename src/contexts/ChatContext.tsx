@@ -143,7 +143,7 @@ export function ChatProvider({ children }: { children: React.ReactNode }) {
     
     // Remove API config as well
     setApiConfigs(prev => {
-      const { [id]: removed, ...rest } = prev
+      const { [id]: _removed, ...rest } = prev
       return rest
     })
   }
